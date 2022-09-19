@@ -46,38 +46,6 @@ while True:
 			#Lookup the follower count only when I *need* to.
 			my_followers = api.get_followers()
 			current_followers = follower_count
-			
-			"""
-			A bit of a crutch: the "if" prevents the first update
-			from sending the message to someone who might have
-			already been following me. Definitely needs rewriting.	
-			"""
-			if banner_count != 1:
-				try:
-					api.send_direct_message(
-						recipient_id = my_followers[0].id,
-						text = (
-							"Hey there, how are you doing?\n\n" +
-							"I'm glad you decided to follow me! " +
-							"If there is anything you want me to " +
-							"make/talk about, you can let me know. " +
-							"Or you can just talk to me for any other " +
-							"reason too, that's also allowed :^)\n\n" +
-							"Have a great day/night/whatever time of " +
-							"day it is for you at the moment.\n\n" +
-							"Again, thanks for following me!\n\n" +
-							"(If we already talked before - oops; " +
-							"this is automated, and my code is not " +
-							"the smartest. This pretty much sums up " +
-							"my content :P)"
-						)
-					)
-				except:
-					print(
-						"Oh well, we tried. " +
-						"Don't forget to DM " +
-						f"{my_followers[0].name}!"
-					)
 
 			#The name for the banner
 			latest_handle = my_followers[0].screen_name
