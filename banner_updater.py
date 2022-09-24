@@ -9,7 +9,7 @@ import configparser
 import time
 import requests
 
-from twitter_banner_maker import BannerMaker
+from BannerMaker import BannerMaker
 
 #Config
 config = configparser.ConfigParser()
