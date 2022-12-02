@@ -69,11 +69,6 @@ while True:
 		else:
 			print("Banner not updated.")
 
-		"""
-		Sleeping to prevent getting rate limited.
-		Doing exactly 1 second was slightly unreliable,
-		so it's 2 instead. Almost the same anyway.
-		"""
 		time.sleep(2)
 
 		for i in range(2):
@@ -81,10 +76,8 @@ while True:
 			print("\033[1A", end = "\x1b[2K")
 
 	except Exception as e:
-		"""
-		Pretty much all of the errors are non-lethal.
-		So, just keep going and hope that it will sort itself out.
-		"""
+		#Pretty much all of the errors are non-lethal.
+		#So, just keep going and hope that it will sort itself out.
 		print(e)
 		continue
 
