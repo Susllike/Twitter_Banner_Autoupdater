@@ -39,7 +39,7 @@ class BannerMaker:
 		img = Image.open(image)
 
 		#Fixed resize scale since it's been calculated in advance
-		img = img.resize((245, 245), Image.ANTIALIAS)
+		img = img.resize((236, 248), Image.ANTIALIAS)
 
 		return img
 
@@ -54,7 +54,9 @@ class BannerMaker:
 
 	def make_banner(self, base):
 		#Adding the text to the banner, "making" it.
-		#Follower count
+
+		#Follower count - DEPRECATED IN THE NEWEST VERSION
+		"""
 		base.text(
 			(self.width/3 - self.f_text_width/2 + 1, 
 				(self.height - self.follower_font_size)/2 + 70), 
@@ -62,9 +64,10 @@ class BannerMaker:
 			font = self.follower_font, 
 			fill = (255, 255, 255),
 			)
+		"""
 
 		base.text(
-			(1215 - self.handle_width/2, 425),
+			(1287 - self.handle_width/2, 425),
 			self.latest_handle,
 			font = self.handle_font,
 			fill = (255, 255, 255),
@@ -74,7 +77,7 @@ class BannerMaker:
 		#Add the profile image of the latest follower to the banner.
 
 		#Fixed position calculated beforehand
-		base.paste(follower, (1092, 105))
+		base.paste(follower, (1169, 101))
 
 	def save_banner(self, image):
 		#Show and save the banner.
@@ -86,6 +89,5 @@ class BannerMaker:
 			image.save("banner.png")
 
 if __name__ == "__main__":
-	#Testing purposes
-	#banner = BannerMaker(2000000, "latest_follower_pfp.jpg", "Joe Doe")
+	#banner = BannerMaker(2000000, "latest_follower_pfp.jpg", "Weirdo")
 	pass
