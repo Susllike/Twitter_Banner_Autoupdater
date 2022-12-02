@@ -18,9 +18,12 @@ class BannerMaker:
 		self.height = 500
 
 		#Fonts style and size
+		# Follower count - DEPRECATED IN THE NEWEST VERSION
+		"""
 		self.follower_font_size = 90
 		self.follower_font = ImageFont.truetype(
 				"Poppins-Medium.ttf", self.follower_font_size)
+		"""
 
 		self.handle_font_size = 30
 		self.handle_font = ImageFont.truetype(
@@ -45,9 +48,13 @@ class BannerMaker:
 
 	def text_prep(self, followers):
 		#Text preparation
+
+		# Follower count - DEPRECATED IN THE NEWEST VERSION
+		"""
 		self.follower_count = str(followers)
 		self.f_text_width, _ = (
 			self.follower_font.getsize(self.follower_count))
+		"""
 
 		self.handle_width, _ = (
 			self.handle_font.getsize(self.latest_handle))
@@ -89,5 +96,5 @@ class BannerMaker:
 			image.save("banner.png")
 
 if __name__ == "__main__":
-	#banner = BannerMaker(2000000, "latest_follower_pfp.jpg", "Weirdo")
+	#banner = BannerMaker(2000000, "latest_follower_pfp.jpg", "Test_subject_1")
 	pass
